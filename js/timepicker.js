@@ -68,7 +68,7 @@ $(function() {
 			current_val --;
 			hourCenterValue.text(current_val);
 		}
-		setTimeInField($(this).closest('.hour').closest('.div_ct_timepicker'));
+		setTimeInField($(this).closest('.ct_hour').closest('.div_ct_timepicker'));
 	});
 
 	// MINUTE INCREMENTER
