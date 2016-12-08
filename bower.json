@@ -1,0 +1,27 @@
+{
+  "name": "timepicker",
+  "homepage": "https://github.com/CurvesTech/timepicker",
+  "authors": [
+    "Mubashar Abbas <mubashir.abbas@outlook.com>"
+  ],
+  "description": "a time picker plugin",
+  "main": "",
+  "keywords": [
+    "jquery",
+    "timepicker",
+    "curvestec"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "fontawesome#^4.7.0"
+  }
+}

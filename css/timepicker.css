@@ -1,0 +1,24 @@
+.div_ct_timepicker{
+	width: 100%;
+}
+.div_ct_timepicker div {
+	float:left;
+}
+.ct_hour{
+	width: 33%;
+	text-align:center;
+	border: 1px solid #ebebeb;
+}
+.ct_minute{
+	width: 33%;
+	text-align:center;
+	border: 1px solid #ebebeb;
+}
+.ct_meridiem{
+	width: 33%;
+	text-align:center;
+	border: 1px solid #ebebeb;
+}
+.ct-up-hand, .ct-down-hand{
+	cursor:pointer;
+}
