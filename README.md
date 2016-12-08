@@ -7,8 +7,11 @@ hence ended up writing this.
 You can use it by downloading the repository as zip file.
 
 ### Using Bower
-to install it using bower do 
-    bower install ct_timepicker
+to install it using bower do:
+
+```
+bower install ct_timepicker
+```
     
 ## How to Use
 
@@ -16,7 +19,9 @@ to install it using bower do
 2. Include the `js/timepicker.js` after you have included the scripts for `jquery` and `bootstrap`.
 3. Assign the class `ct_timepicker` to any of your `input` elements and the timepicker control will replace it.
 e.g.
-    <input type="text" name="sometime" class="ct_timepicker">
+```html
+<input type="text" name="sometime" class="ct_timepicker">
+```
 
 ### Initialize with Value
 
@@ -24,7 +29,9 @@ You can also initialize the control by having set the 24 hrs format time in the 
 bound with the control.
 
 e.g. 
-    <input type="text" value="13:01" name="sometime" class="ct_timepicker">
+```html
+<input type="text" value="13:01" name="sometime" class="ct_timepicker">
+```
     
 If you want to make any improvements please submit pull requests, or file issues so we can make it better together.
 
