@@ -4,21 +4,21 @@ $(function() {
 	var plugin_markup = '<div class="div_ct_timepicker">' +
 		'<div class="ct_hour">' +
 			'<h4>HH</h4>'+
-			'<button class="btn btn-primary btn_increment"><i class="fa fa-chevron-up ct-up-hand"></i></button>'+
+			'<button type="button" class="btn btn-primary btn_increment"><i class="fa fa-chevron-up ct-up-hand"></i></button>'+
 			'<h2 class="center_value">1</h2>' +
-			'<button class="btn btn-primary btn_decrement"><i class="fa fa-chevron-down ct-down-hand"></i></button>'+
+			'<button type="button" class="btn btn-primary btn_decrement"><i class="fa fa-chevron-down ct-down-hand"></i></button>'+
 		'</div>' +
 		'<div class="ct_minute">' +
 			'<h4>MM</h4>'+
-			'<button class="btn btn-primary btn_increment"><i class="fa fa-chevron-up ct-up-hand"></i></button>'+
+			'<button type="button" class="btn btn-primary btn_increment"><i class="fa fa-chevron-up ct-up-hand"></i></button>'+
 			'<h2 class="center_value">1</h2>' +
-			'<button class="btn btn-primary btn_decrement"><i class="fa fa-chevron-down ct-down-hand"></i></button>'+
+			'<button type="button" class="btn btn-primary btn_decrement"><i class="fa fa-chevron-down ct-down-hand"></i></button>'+
 		'</div>' +
 		'<div class="ct_meridiem">' +
 			'<h4>AM/PM</h4>'+
-			'<button class="btn btn-primary btn_switch"><i class="fa fa-chevron-up ct-up-hand"></i></button>'+
+			'<button type="button" class="btn btn-primary btn_switch"><i class="fa fa-chevron-up ct-up-hand"></i></button>'+
 			'<h2 class="center_value">AM</h2>' +
-			'<button class="btn btn-primary btn_switch"><i class="fa fa-chevron-down ct-down-hand"></i></button>'+
+			'<button type="button" class="btn btn-primary btn_switch"><i class="fa fa-chevron-down ct-down-hand"></i></button>'+
 		'</div>' +
 		'<div style="clear:both"></div>'+
 
