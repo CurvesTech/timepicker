@@ -133,11 +133,16 @@ $(function() {
 	function setTimeInField(el) {
 		var ct_hour = parseInt( el.find('.ct_hour').find('.center_value').text() );
 		var ct_minute = parseInt( el.find('.ct_minute').find('.center_value').text() );
-		var ct_meridiem = el.find('.ct_meridiem').find('.center_value').text();		
+		var ct_meridiem = el.find('.ct_meridiem').find('.center_value').text();	
+		// the am edge case.	
 		if( (ct_hour == 12) && (ct_meridiem.trim() == 'AM') ) {
 			ct_hour -= 12;
 		} else if(ct_meridiem.trim() == 'PM') {
 			ct_hour += 12;
+			// the pm edge case.
+			if(ct_hour == 24) {
+				ct_hour = 12;
+			}
 		}
 		// adding the trailing zeros.
 		if(ct_hour.toString().length == 1) {
