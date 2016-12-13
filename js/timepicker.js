@@ -36,6 +36,19 @@ $(function() {
 			if(hours > 12) {
 				hours -= 12;
 				meridiem = 'PM';
+			} else if(hours == 12) {
+				// then that means 12 PM right. 
+				meridiem = 'PM';
+			} else if(hours == 0) {
+				// then it means midnight.
+				hours = 12;
+			}
+
+			if(hours.toString().length == 1) {
+				hours = '0' + hours;
+			}
+			if(minutes.toString().length == 1) {
+				minutes = '0' + minutes;
 			}
 			// assign the values to the control
 			$(obj).next().find('.ct_hour').find('.center_value').text(hours);
@@ -55,6 +68,9 @@ $(function() {
 		var current_val = parseInt( hourCenterValue.text() );
 		if(current_val < 12) {
 			current_val ++;
+			if(current_val.toString().length == 1) {
+				current_val = '0' + current_val;
+			}
 			hourCenterValue.text(current_val);
 		}
 		setTimeInField($(this).closest('.ct_hour').closest('.div_ct_timepicker'));
@@ -66,6 +82,9 @@ $(function() {
 		var current_val = parseInt( hourCenterValue.text() );
 		if(current_val > 1) {
 			current_val --;
+			if(current_val.toString().length == 1) {
+				current_val = '0' + current_val;
+			}
 			hourCenterValue.text(current_val);
 		}
 		setTimeInField($(this).closest('.ct_hour').closest('.div_ct_timepicker'));
@@ -77,6 +96,9 @@ $(function() {
 		var current_val = parseInt( minuteCenterValue.text() );
 		if(current_val < 59) {
 			current_val ++;
+			if(current_val.toString().length == 1) {
+				current_val = '0' + current_val;
+			}
 			minuteCenterValue.text(current_val);
 		}
 		setTimeInField($(this).closest('.ct_minute').closest('.div_ct_timepicker'));
@@ -88,6 +110,9 @@ $(function() {
 		var current_val = parseInt( minuteCenterValue.text() );
 		if(current_val > 0) {
 			current_val --;
+			if(current_val.toString().length == 1) {
+				current_val = '0' + current_val;
+			}
 			minuteCenterValue.text(current_val);
 		}
 		setTimeInField($(this).closest('.ct_minute').closest('.div_ct_timepicker'));
@@ -109,9 +134,20 @@ $(function() {
 		var ct_hour = parseInt( el.find('.ct_hour').find('.center_value').text() );
 		var ct_minute = parseInt( el.find('.ct_minute').find('.center_value').text() );
 		var ct_meridiem = el.find('.ct_meridiem').find('.center_value').text();		
-		if(ct_meridiem.trim() == 'PM') {
+		if( (ct_hour == 12) && (ct_meridiem.trim() == 'AM') ) {
+			ct_hour -= 12;
+		} else if(ct_meridiem.trim() == 'PM') {
 			ct_hour += 12;
 		}
+		// adding the trailing zeros.
+		if(ct_hour.toString().length == 1) {
+			ct_hour = '0' + ct_hour;
+		}
+
+		if(ct_minute.toString().length == 1) {
+			ct_minute = '0' + ct_minute;
+		}
+
 		el.prev().val(ct_hour + ":" + ct_minute);
 		
 	}
