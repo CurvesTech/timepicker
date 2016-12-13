@@ -4,6 +4,7 @@
 .div_ct_timepicker div {
 	float:left;
 	padding-bottom: 10px;
+	margin-bottom: 10px; 
 }
 .ct_hour{
 	width: 33%;
