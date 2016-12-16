@@ -24,3 +24,18 @@
 .ct-up-hand, .ct-down-hand{
 	cursor:pointer;
 }
+.center_value {
+    width: 100%;
+    text-align: center;
+    border: none;
+    font-size: 36px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
