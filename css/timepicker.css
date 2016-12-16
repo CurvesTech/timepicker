@@ -27,10 +27,10 @@
 .center_value {
     width: 100%;
     text-align: center;
-    border: none;
+    border: none !important;
     font-size: 36px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
 }
 
 input[class="center_value"]::-webkit-outer-spin-button,
