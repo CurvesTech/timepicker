@@ -1,17 +1,17 @@
 $(function() {
-	$('.ct_timepicker').addClass('hidden'); // hiden the input elements itself
+	// $('.ct_timepicker').addClass('hidden'); // hiden the input elements itself
 	// the plugin markup to be inserted after the time inputs
 	var plugin_markup = '<div class="div_ct_timepicker">' +
 		'<div class="ct_hour">' +
 			'<h4>HH</h4>'+
 			'<button type="button" class="btn btn-primary btn_increment"><i class="fa fa-chevron-up ct-up-hand"></i></button>'+
-			'<input type="number" class="center_value" value="1">' +
+			'<input type="number" class="center_value" data-time-type="hour" value="1">' +
 			'<button type="button" class="btn btn-primary btn_decrement"><i class="fa fa-chevron-down ct-down-hand"></i></button>'+
 		'</div>' +
 		'<div class="ct_minute">' +
 			'<h4>MM</h4>'+
 			'<button type="button" class="btn btn-primary btn_increment"><i class="fa fa-chevron-up ct-up-hand"></i></button>'+
-			'<input type="number" class="center_value" value="1">' +
+			'<input type="number" class="center_value" value="1" data-time-type="minute">' +
 			'<button type="button" class="btn btn-primary btn_decrement"><i class="fa fa-chevron-down ct-down-hand"></i></button>'+
 		'</div>' +
 		'<div class="ct_meridiem">' +
@@ -156,4 +156,45 @@ $(function() {
 		el.prev().val(ct_hour + ":" + ct_minute);
 		
 	}
+
+	$('body').on('blur', '.center_value', function() {
+		var val_element = $(this);
+		var val_element_type = val_element.attr('data-time-type');
+		if(val_element_type == 'hour') {
+			var newHourValue = val_element.val();
+			if(parseInt(newHourValue)) {
+				var newHourValueInt = parseInt(newHourValue); // for comparisons
+				if(newHourValueInt > 12) {
+					val_element.val('12'); // can't go above 12. 
+				} else {
+					if(newHourValueInt < 1) {
+						val_element.val('1');
+					} else {
+						val_element.val(newHourValue);
+					}
+				}
+			} else {
+				// SOME INVALID NON NUMERIC STUFF ENTERED.
+				val_element.val('1');
+			}
+		} else if(val_element_type == 'minute') {
+			var newMinuteValue = val_element.val();
+			if(parseInt(newMinuteValue)) {
+				var newMinuteValueInt = parseInt(newMinuteValue); // for comparisons
+				if(newMinuteValueInt > 59) {
+					val_element.val('59'); // can't go above 59. 
+				} else {
+					if(newMinuteValueInt < 0) {
+						val_element.val('0');
+					} else {
+						val_element.val(newMinuteValue);
+					}
+				}
+			} else {
+				// SOME INVALID NON NUMERIC STUFF ENTERED.
+				val_element.val('0');
+			}
+		}
+		setTimeInField(val_element.closest('.div_ct_timepicker'));
+	});
 });
