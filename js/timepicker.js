@@ -51,9 +51,9 @@ $(function() {
 				minutes = '0' + minutes;
 			}
 			// assign the values to the control
-			$(obj).next().find('.ct_hour').find('.center_value').text(hours);
-			$(obj).next().find('.ct_minute').find('.center_value').text(minutes);
-			$(obj).next().find('.ct_meridiem').find('.center_value').text(meridiem);
+			$(obj).next().find('.ct_hour').find('.center_value').val(hours);
+			$(obj).next().find('.ct_minute').find('.center_value').val(minutes);
+			$(obj).next().find('.ct_meridiem').find('.center_value').val(meridiem);
 
 		}
 	});
