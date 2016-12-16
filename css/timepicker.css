@@ -31,6 +31,7 @@
     font-size: 36px;
     margin-top: 5px !important;
     margin-bottom: 5px !important;
+    height: auto !important;
 }
 
 input[class="center_value"]::-webkit-outer-spin-button,
