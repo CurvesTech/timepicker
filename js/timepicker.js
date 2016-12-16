@@ -1,5 +1,5 @@
 $(function() {
-	// $('.ct_timepicker').addClass('hidden'); // hiden the input elements itself
+	$('.ct_timepicker').addClass('hidden'); // hiden the input elements itself
 	// the plugin markup to be inserted after the time inputs
 	var plugin_markup = '<div class="div_ct_timepicker">' +
 		'<div class="ct_hour">' +
